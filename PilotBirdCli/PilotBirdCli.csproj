@@ -46,6 +46,8 @@
     <Compile Include="CacheMan\CacheManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tasks\MultiDispatch.cs" />
+    <Compile Include="Tasks\Worker.cs" />
     <Compile Include="Timers\PeriodicTaskFactory.cs" />
     <Compile Include="Timers\TaskTimers.cs" />
   </ItemGroup>
@@ -55,7 +57,6 @@
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Tasks\" />
     <Folder Include="Tests\" />
     <Folder Include="Threads\" />
   </ItemGroup>

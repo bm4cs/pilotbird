@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading;
 using PilotBirdCli.CacheMan;
+using PilotBirdCli.Tasks;
 using PilotBirdCli.Timer;
 
 namespace PilotBirdCli
@@ -12,10 +13,11 @@ namespace PilotBirdCli
             var cancelSource = new CancellationTokenSource();
             new Thread(() => CancelOnInput(cancelSource)).Start();
 
-            var cacheManager = new CacheManager();
-            cacheManager.StartAsync(cancelSource).Wait();
-            
-            // wait() only for console app demo purposes.
+
+            var multiDispatch = new MultiDispatch();
+            multiDispatch.Start(cancelSource);
+
+
             //var taskTimers = new TaskTimers();
             //taskTimers.StartAsync(cancelSource).Wait();
         }

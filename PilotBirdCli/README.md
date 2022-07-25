@@ -4,16 +4,10 @@
 
 Task based programming.
 
-- dispatch patterns\
-- Task Parallel Library (TPL)
-- `async` and `await` (TAP)
+- dispatch patterns [ref1](https://stackoverflow.com/questions/12337671/using-async-await-for-multiple-tasks) [ref2]()
+- `async` and `await` (TAP) [ref1](https://blog.stephencleary.com/2012/02/async-and-await.html) [ref2](https://stackoverflow.com/questions/14177891/understanding-async-await-in-c-sharp) [ref3](https://docs.microsoft.com/en-us/dotnet/standard/parallel-programming/data-structures-for-parallel-programming)
+- TPL
 - error handling
-
-Great background reading:
-
-- [Stephen Cleary Async and Await Primer](https://blog.stephencleary.com/2012/02/async-and-await.html)
-- [Stackoverflow: Understanding async / await in C#](https://stackoverflow.com/questions/14177891/understanding-async-await-in-c-sharp) great answer by Stephen Cleary
-- [Microsoft Docs: Data Structures for Parallel Programming](https://docs.microsoft.com/en-us/dotnet/standard/parallel-programming/data-structures-for-parallel-programming)
 
 ### async/await
 
