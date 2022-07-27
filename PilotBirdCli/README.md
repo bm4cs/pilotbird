@@ -12,12 +12,12 @@ Task based programming.
 ### async/await
 
 - By default an awaitable will capture the current SynchronizationContext, later applying it to the remainder of the async method.
-- This is convenient for UI based event handlers, but most of the time it is not.
-- Most of the time you don't need to sync back to the main context, and most async methods are designed with composition in mind
-- That is, they await other operations, and each represents an async operation itself.
-- In this case, tell the awaiter to not capture the current context by calling `ConfigureAwait(false)`
-- Example: `var c = await DownloadFileContentsAsync(fn).ConfigureAwait(false);`
-
+	- This is convenient for UI based event handlers, but most of the time it is not.
+	- Most of the time you don't need to sync back to the main context, and most async methods are designed with composition in mind
+	- That is, they await other operations, and each represents an async operation itself.
+	- In this case, tell the awaiter to not capture the current context by calling `ConfigureAwait(false)`
+	- Example: `var c = await DownloadFileContentsAsync(fn).ConfigureAwait(false);`
+- The best practices for getting exceptions from tasks are to await them - Stephen Cleary
 
 ## Thread
 

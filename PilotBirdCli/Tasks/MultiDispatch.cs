@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -17,7 +16,7 @@ namespace PilotBirdCli.Tasks
                 new Worker { Id = 2, SleepTimeout = 2000 },
                 new Worker { Id = 3, SleepTimeout = 3000 },
                 new Worker { Id = 4, SleepTimeout = 4000 },
-                new Worker { Id = 5, SleepTimeout = 5000 },
+                new Worker { Id = 5, SleepTimeout = 5000 }
             };
 
             var startTime = DateTime.Now;
@@ -42,17 +41,17 @@ namespace PilotBirdCli.Tasks
             Console.ReadKey();
         }
 
-        static void PerformTest_ParallelForEach(List<Worker> workers, DateTime testStart, CancellationToken cancelToken)
+        private static void PerformTest_ParallelForEach(List<Worker> workers, DateTime testStart, CancellationToken cancelToken)
         {
-            Parallel.ForEach(workers, worker => worker.DoWork(testStart).Wait(cancelToken));
+            Parallel.ForEach(workers, worker => worker.DoWork(testStart).Wait());
         }
 
-        static void PerformTest_TaskWaitAll(List<Worker> workers, DateTime testStart, CancellationToken cancelToken)
+        private static void PerformTest_TaskWaitAll(List<Worker> workers, DateTime testStart, CancellationToken cancelToken)
         {
             Task.WaitAll(workers.Select(worker => worker.DoWork(testStart)).ToArray(), cancelToken);
         }
 
-        static Task PerformTest_TaskWhenAll(List<Worker> workers, DateTime testStart)
+        private static Task PerformTest_TaskWhenAll(List<Worker> workers, DateTime testStart)
         {
             return Task.WhenAll(workers.Select(worker => worker.DoWork(testStart)));
         }

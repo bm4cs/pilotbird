@@ -19,7 +19,8 @@ namespace PilotBirdCli.Tasks
             Console.WriteLine("Worker {0} started on thread {1}, beginning {2:F2} seconds after test start.",
                 Id, Thread.CurrentThread.ManagedThreadId, (workerStart - testStart).TotalSeconds);
 
-            await Task.Run(() => Thread.Sleep(SleepTimeout));
+            //await Task.Run(() => Thread.Sleep(SleepTimeout));
+            await Task.Delay(SleepTimeout);
 
             var workerEnd = DateTime.Now;
 
